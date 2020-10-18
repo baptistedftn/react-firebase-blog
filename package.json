@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Blog component powered by Firebase realtime database",
   "main": "/dist/index.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com/" 
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baptistedftn/react-firebase-blog.git"
+    "url": "git://github.com/baptistedftn/react-firebase-blog.git"
   },
   "keywords": [
     "react",
