@@ -1,6 +1,7 @@
 # Firebase Blog for React.js
 
 Blog component powered by Firebase realtime database
+Markdown supported
 
 ## Install
 
