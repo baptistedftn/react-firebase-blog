@@ -1,11 +1,8 @@
 {
   "name": "react-firebase-blog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Blog component powered by Firebase realtime database",
-  "main": "/dist/index.js",
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/" 
-  },
+  "main": "/lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,13 +12,19 @@
     "blog",
     "firebase"
   ],
-  "author": "baptistedftn",
-  "license": "ISC",
+  "author": { 
+    "name" : "Desfontaines Baptiste",
+    "url" : "https://github.com/baptistedftn"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/baptistedftn/react-firebase-blog/issues"
   },
   "homepage": "https://github.com/baptistedftn/react-firebase-blog#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "firebase": "^7.24.0",
+    "markdown-react-js": "^1.0.2",
     "react": "^16.14.0"
   }
 }
