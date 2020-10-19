@@ -66,5 +66,5 @@ render() {
 ## Copyright
 &copy; *baptistedftn* https://github.com/baptistedftn
 
-[License] (https://baptistedftn.mit-license.org/ "license")
+[License](https://baptistedftn.mit-license.org/ "license")
 
