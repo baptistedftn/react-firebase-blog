@@ -1,6 +1,7 @@
 # Firebase Blog for React.js
 
 Blog component powered by Firebase realtime database
+Markdown supported
 
 ## Install
 
@@ -66,5 +67,5 @@ render() {
 ## Copyright
 &copy; *baptistedftn* https://github.com/baptistedftn
 
-[License] (https://baptistedftn.mit-license.org/ "license")
+[License](https://baptistedftn.mit-license.org/ "license")
 
