@@ -12,9 +12,9 @@
     "blog",
     "firebase"
   ],
-  "author": { 
-    "name" : "Desfontaines Baptiste",
-    "url" : "https://github.com/baptistedftn"
+  "author": {
+    "name": "Desfontaines Baptiste",
+    "url": "https://github.com/baptistedftn"
   },
   "license": "MIT",
   "bugs": {
