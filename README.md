@@ -1,3 +1,9 @@
+# Searching about maintainer, please open an issue to help
+
+~~~
+~~~
+
+
 # Firebase Blog for React.js
 
 Blog component powered by Firebase realtime database
