@@ -1,31 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import * as firebase from 'firebase';
-import { Button, Snackbar } from 'react-native-paper';
+import { Button } from 'react-native-paper';
+import { Image } from 'react-native';
 
 import Layout from '../components/global/Layout';
 import Text from '../components/utils/UbuntuFont';
+import Colors from '../constants/colors';
 
 export default function ({ navigation }) {
-	const [HelloVisible, setHelloVisible] = useState(true);	
-	const onDismissSnackBar = () => setHelloVisible(false);
-
 	return (
-		<Layout navigation={navigation} title="Accueil">
+		<Layout navigation={navigation} title="CocoDressing &reg;">
 			<View style={styles.container}>
-				<Snackbar 
-				visible={HelloVisible}
-				onDismiss={onDismissSnackBar}
-				duration={3000}
-				>
-					Hello {firebase.auth().currentUser.displayName || firebase.auth().currentUser.email}
-				</Snackbar>
+				<Image source={require('../assets/coco.png')} />
+				<Text>Hello {firebase.auth().currentUser.displayName || firebase.auth().currentUser.email}</Text>
 				<Text>{"\n"}</Text>
-				<Button icon="compass" mode="outlined" onPress={() => navigation.navigate('Feed')}>
-					Explorer
+				<Button color={Colors.black} icon="compass" mode="outlined" onPress={() => navigation.navigate('Feed')}>
+					Découvrir des articles
 				</Button>
 				<Text>{"\n"}</Text>
-				<Button icon="logout" mode="outlined" onPress={() => firebase.auth().signOut()}>
+				<Button color={Colors.black} icon="logout" mode="outlined" onPress={() => firebase.auth().signOut()}>
 					Déconnexion
 				</Button>
 			</View>
@@ -35,6 +29,8 @@ export default function ({ navigation }) {
 
 const styles = StyleSheet.create({
 	container: {
+		backgroundColor: Colors.background,
+		color: Colors.primary,
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',

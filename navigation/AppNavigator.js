@@ -2,12 +2,16 @@ import React, { useContext } from 'react';
 import * as firebase from 'firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 import { AuthContext } from '../provider/AuthProvider';
 
 // Main
 import Home from '../screens/Home';
 import Feed from '../screens/Feed';
+import Welcome from '../screens/Welcome'
 
 // Auth screens
 import Login from '../screens/auth/Login';
@@ -40,6 +44,7 @@ const Auth = () => {
 				headerShown: false,
 			}}
 		>
+      <AuthStack.Screen name="Welcome" component={Welcome} />
 			<AuthStack.Screen name="Login" component={Login} />
 			<AuthStack.Screen name="Register" component={Register} />
 			<AuthStack.Screen name="ForgetPassword" component={ForgetPassword} />
@@ -47,21 +52,39 @@ const Auth = () => {
 	);
 };
 
-const MainStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const Main = () => {
-	return (
-		<MainStack.Navigator
-			screenOptions={{
-				headerMode: 'none',
-				headerShown: false,
-			}}
-		>
-			<MainStack.Screen name="Home" component={Home} />
-			<MainStack.Screen name="Feed" component={Feed} />
-		</MainStack.Navigator>
-	);
-};
+const MainNavigator = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      tabBarOptions={{
+        activeTintColor: '#e91e63',
+      }}
+    >
+        <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarLabel: 'Accueil',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          tabBarLabel: 'Découvrir',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="compass" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
 
 export default () => {
 	const auth = useContext(AuthContext);
@@ -70,7 +93,7 @@ export default () => {
 		<NavigationContainer>
 			{user == null && <Loading />}
 			{user == false && <Auth />}
-			{user == true && <Main />}
+			{user == true && <MainNavigator />}
 		</NavigationContainer>
 	);
 };

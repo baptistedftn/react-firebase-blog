@@ -13,7 +13,7 @@ export default function (props) {
 					height: 64,
 					flexDirection: 'row',
 					justifyContent: 'space-between',
-					backgroundColor: '#fff',
+					backgroundColor: Colors.headerBackground,
 					alignItems: 'center',
 					borderColor: '#c0c0c0',
 					borderBottomWidth: 1,
@@ -30,7 +30,7 @@ export default function (props) {
 							justifyContent: 'center',
 						}}
 					>
-						<Ionicons name="ios-arrow-back" size={24} color="#000" />
+						<Ionicons name="ios-arrow-back" size={24} color={Colors.topNavText} />
 					</TouchableOpacity>
 				) : (
 					<View style={{ flex: 1, alignItems: 'flex-start' }} />

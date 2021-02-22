@@ -26,32 +26,32 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ({ navigation }) {
 	return (
-		<Layout navigation={navigation} title=" " withBack>
+		<Layout navigation={navigation} >
 			<ScrollView>
-			<Post
-				Title='Truc Machin - 5€'
-				Text='Très bon état et blabla...'
-				User='Utilisateur'
-				Subtitle='Subtitle'
-				userPic='https://picsum.photos/30'
-				Picture='https://picsum.photos/700'
-			/>
-			<Post
-				Title='Truc Bidule - 10€'
-				Text='Très mauvais état et blabla...'
-				User='Utilisateur'
-				Subtitle='Subtitle'
-				userPic='https://picsum.photos/31'
-				Picture='https://picsum.photos/701'
-			/>
-			<Post
-				Title='Machin Truc - 11,2€'
-				Text='Vivant'
-				User="Nom d'utilisateur"
-				Subtitle='Subtitle'
-				userPic='https://picsum.photos/32'
-				Picture='https://picsum.photos/702'
-			/>
+				<Post
+					Title='Truc Machin - 5€'
+					Text='Très bon état et blabla...'
+					User='Utilisateur'
+					Subtitle='Subtitle'
+					userPic='https://picsum.photos/30'
+					Picture='https://picsum.photos/700'
+				/>
+				<Post
+					Title='Truc Bidule - 10€'
+					Text='Très mauvais état et blabla...'
+					User='Utilisateur'
+					Subtitle='Subtitle'
+					userPic='https://picsum.photos/31'
+					Picture='https://picsum.photos/300'
+				/>
+				<Post
+					Title='Machin Truc - 11,2€'
+					Text='Vivant'
+					User="Nom d'utilisateur"
+					Subtitle='Subtitle'
+					userPic='https://picsum.photos/32'
+					Picture='https://picsum.photos/702'
+				/>
 			</ScrollView>
 		</Layout>
 	);

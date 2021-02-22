@@ -37,7 +37,7 @@ export default function ({ navigation }) {
 	}
 	return (
 		<KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
-			<StatusBar style="auto" translucent backgroundColor="#f7f7f7" />
+			<StatusBar style="auto" translucent backgroundColor={Colors.headerBackground} />
 			<Layout navigation={navigation}>
 				<ScrollView
 					contentContainerStyle={{
@@ -49,7 +49,7 @@ export default function ({ navigation }) {
 							flex: 1,
 							justifyContent: 'center',
 							alignItems: 'center',
-							backgroundColor: '#f7f7f7',
+							backgroundColor: Colors.headerBackground,
 						}}
 					>
 						<Image
@@ -66,7 +66,7 @@ export default function ({ navigation }) {
 							flex: 3,
 							paddingHorizontal: 20,
 							paddingBottom: 20,
-							backgroundColor: '#fff',
+							backgroundColor: Colors.background,
 						}}
 					>
 						<Text

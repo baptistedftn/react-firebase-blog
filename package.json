@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "@expo-google-fonts/ubuntu": "^0.1.0",
+    "@gorhom/animated-tabbar": "^2.1.1",
+    "@gorhom/paper-onboarding": "^1.0.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.7.6",
     "@react-navigation/stack": "^5.9.3",
     "expo": "~39.0.2",
@@ -23,11 +26,13 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-gesture-handler": "~1.7.0",
+    "react-native-gesture-handler": "^1.10.1",
     "react-native-paper": "^4.5.0",
-    "react-native-reanimated": "~1.13.0",
+    "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
+    "react-native-svg": "^12.1.0",
+    "react-native-toast-message": "^1.4.7",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
@@ -49,5 +54,5 @@
   "private": true,
   "jest": {
     "preset": "jest-expo"
-    }
+  }
 }

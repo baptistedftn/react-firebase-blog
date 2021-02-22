@@ -13,6 +13,7 @@ import {
 import * as firebase from 'firebase';
 
 import Layout from '../../components/global/Layout';
+
 import Text from '../../components/utils/UbuntuFont';
 import Colors from '../../constants/colors';
 
@@ -27,17 +28,16 @@ export default function ({ navigation }) {
 			.auth()
 			.signInWithEmailAndPassword(email, password)
 			.catch(function (error) {
-				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				// ...
+				// Traiter le message et l'interpreter dans modale
 				setLoading(false);
 				alert(errorMessage);
 			});
 	}
 	return (
 		<KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
-			<StatusBar style="auto" translucent backgroundColor="#f7f7f7" />
+			<StatusBar style="auto" translucent backgroundColor={Colors.headerBackground} />
 			<Layout navigation={navigation}>
 				<ScrollView
 					contentContainerStyle={{
@@ -49,7 +49,7 @@ export default function ({ navigation }) {
 							flex: 1,
 							justifyContent: 'center',
 							alignItems: 'center',
-							backgroundColor: '#f7f7f7',
+							backgroundColor: Colors.headerBackground,
 						}}
 					>
 						<Image
@@ -66,7 +66,7 @@ export default function ({ navigation }) {
 							flex: 3,
 							paddingHorizontal: 20,
 							paddingBottom: 20,
-							backgroundColor: '#fff',
+							backgroundColor: Colors.background,
 						}}
 					>
 						<Text
@@ -90,7 +90,7 @@ export default function ({ navigation }) {
 								}}
 								value={email}
 								autoCapitalize="none"
-								autoCompleteType="off"
+								autoCompleteType="email"
 								autoCorrect={false}
 								keyboardType="email-address"
 								onChangeText={(text) => setEmail(text)}
@@ -108,7 +108,7 @@ export default function ({ navigation }) {
 								}}
 								value={password}
 								autoCapitalize="none"
-								autoCompleteType="off"
+								autoCompleteType="password"
 								autoCorrect={false}
 								secureTextEntry={true}
 								onChangeText={(text) => setPassword(text)}

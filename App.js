@@ -18,6 +18,8 @@ import {
 } from '@expo-google-fonts/ubuntu';
 import AppNavigator from './navigation/AppNavigator';
 import { AuthProvider } from './provider/AuthProvider';
+import Colors from './constants/colors';
+import Toast from 'react-native-toast-message'
 
 export default function App(props) {
 	const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -36,6 +38,7 @@ export default function App(props) {
 				<StatusBar style="auto" translucent />
 				<AuthProvider>
 					<AppNavigator />
+					<Toast ref={(ref) => Toast.setRef(ref)} />
 				</AuthProvider>
 			</SafeAreaView>
 		);
@@ -77,5 +80,6 @@ function handleFinishLoading(setLoadingComplete) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: Colors.background
 	},
 });
