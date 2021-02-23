@@ -1,6 +1,7 @@
 import React from 'react';
 import PaperOnboarding, {PaperOnboardingItemType} from "@gorhom/paper-onboarding";
 import { Image } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 const Text_1 = 'Bienvenue sur CocoDressing ! \n \n (faite défiler 👉)';
 const Text_2 = 'Avec CocoDressing, on revend, on achète, on fait des économies et puis on est éco responsable aussi.';
@@ -40,11 +41,14 @@ const data = [
 ];
 
 export default function Welcome({navigation}) {
-  const handleOnClosePress = () => navigation.navigate('Register');
+  const handleOnClosePress = () => navigation.navigate('Login');
   return (
+    <>
     <PaperOnboarding
       closeButtonText="S'inscrire / Se connecter"
       data={data}
       onCloseButtonPress={handleOnClosePress} />
+		<StatusBar style="auto" translucent/>
+    </>
   );
 }

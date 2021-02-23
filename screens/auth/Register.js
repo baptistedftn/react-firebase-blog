@@ -11,6 +11,7 @@ import {
 	StyleSheet,
 } from 'react-native';
 import * as firebase from 'firebase';
+import Toast from 'react-native-toast-message'
 
 import Layout from '../../components/global/Layout';
 import Text from '../../components/utils/UbuntuFont';
@@ -27,12 +28,42 @@ export default function ({ navigation }) {
 			.auth()
 			.createUserWithEmailAndPassword(email, password)
 			.catch(function (error) {
-				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				// ...
 				setLoading(false);
-				alert(errorMessage);
+				if (errorCode == 'auth/weak-password') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Mot de passe trop court 🙄',
+						text2: 'Ayez plus d\'imagination...',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					})
+				} else if (errorCode == 'auth/email-already-in-use') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Vous êtes sûr d\'être au bon endroit ?',
+						text2: '1 adresse mail = 1 compte',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					})
+				} else if (errorCode === 'auth/invalid-email') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Oups 😕',
+						text2: 'Ça ne ressemble pas à une adresse mail...',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else {
+					alert(errorMessage);
+				}
 			});
 	}
 	return (

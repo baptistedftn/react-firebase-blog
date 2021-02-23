@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -12,6 +14,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Home from '../screens/Home';
 import Feed from '../screens/Feed';
 import Welcome from '../screens/Welcome'
+import Account from '../screens/Account'
 
 // Auth screens
 import Login from '../screens/auth/Login';
@@ -59,10 +62,10 @@ const MainNavigator = () => {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#e91e63'
       }}
     >
-        <Tab.Screen
+      <Tab.Screen
         name="Home"
         component={Home}
         options={{
@@ -79,6 +82,16 @@ const MainNavigator = () => {
           tabBarLabel: 'Découvrir',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="compass" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Account"
+        component={Account}
+        options={{
+          tabBarLabel: 'Mon Compte',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
         }}
       />

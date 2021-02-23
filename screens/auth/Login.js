@@ -11,6 +11,7 @@ import {
 	StyleSheet,
 } from 'react-native';
 import * as firebase from 'firebase';
+import Toast from 'react-native-toast-message'
 
 import Layout from '../../components/global/Layout';
 
@@ -32,7 +33,61 @@ export default function ({ navigation }) {
 				var errorMessage = error.message;
 				// Traiter le message et l'interpreter dans modale
 				setLoading(false);
-				alert(errorMessage);
+				// [START_EXCLUDE]
+				if (errorCode === 'auth/wrong-password') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Oups 🤨',
+						text2: 'Mot de passe incorrect',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else if (errorCode === 'auth/user-disabled') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Compte bloqué 🚫',
+						text2: 'Si vous pensez qu\'il s\'agit d\'une erreur, veuillez nous contacter',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else if (errorCode === 'auth/user-not-found') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Oups 🧐',
+						text2: 'Aucun compte n\'a été trouvé à cet adresse mail',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else if (errorCode === 'auth/invalid-email') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'Oups 😕',
+						text2: 'Ça ne ressemble pas à une adresse mail...😶',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else if (errorCode === 'auth/too-many-requests') {
+					Toast.show({
+						type: 'error',
+						position: 'bottom',
+						text1: 'STOP ! Attendez un peu... 😶',
+						text2: 'Vous avez entré trop de fois de mauvais mot de passe',
+						visibilityTime: 2000,
+						autoHide: true,
+						bottomOffset: 60,
+					  })
+				} else {
+					alert(errorMessage);
+				}
+				console.log(errorCode);
 			});
 	}
 	return (
@@ -91,7 +146,7 @@ export default function ({ navigation }) {
 								value={email}
 								autoCapitalize="none"
 								autoCompleteType="email"
-								autoCorrect={false}
+								autoCorrect={true}
 								keyboardType="email-address"
 								onChangeText={(text) => setEmail(text)}
 							/>

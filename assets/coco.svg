@@ -15,7 +15,7 @@
    height="56.94915"
    viewBox="0 0 56.94915 56.94915"
    sodipodi:docname="coco.svg"
-   inkscape:export-filename="/media/baptiste/DATA/Project/CocoDressing/assets/coco.png"
+   inkscape:export-filename="/media/baptiste/DATA/Project/CocoDressing/assets/coco_dark.png"
    inkscape:export-xdpi="168.57001"
    inkscape:export-ydpi="168.57001"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
@@ -27,7 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -47,7 +47,7 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="10.429825"
-     inkscape:cx="22.881396"
+     inkscape:cx="2.6509511"
      inkscape:cy="21.938853"
      inkscape:window-x="0"
      inkscape:window-y="0"
