@@ -17,13 +17,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "icon": "./assets/ios_icon.png",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.baptistedftn.cocodressing"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "description": "",
     "android": {
+      "icon": "./assets/icon.png",
       "package": "com.baptistedftn.cocodressing"
     }
   }

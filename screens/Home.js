@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import * as firebase from 'firebase';
+import firebase from '../provider/Firebase'
 import { Button } from 'react-native-paper';
 import { Image } from 'react-native';
 

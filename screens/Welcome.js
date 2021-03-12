@@ -48,7 +48,7 @@ export default function Welcome({navigation}) {
       closeButtonText="S'inscrire / Se connecter"
       data={data}
       onCloseButtonPress={handleOnClosePress} />
-		<StatusBar style="auto" translucent/>
+		<StatusBar hidden/>
     </>
   );
 }

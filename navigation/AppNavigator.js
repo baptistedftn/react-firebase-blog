@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import * as firebase from 'firebase';
+import firebase from '../provider/Firebase'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -22,20 +21,6 @@ import Register from '../screens/auth/Register';
 import ForgetPassword from '../screens/auth/ForgetPassword';
 
 import Loading from '../screens/utils/Loading';
-
-const firebaseConfig = {
-	apiKey: "AIzaSyAj3hMXas3t7YIq7AY2VRBn4qei1tjjPqQ",
-	authDomain: "cocodressing-guyane.firebaseapp.com",
-	databaseURL: "https://cocodressing-guyane.firebaseio.com",
-	projectId: "cocodressing-guyane",
-	storageBucket: "cocodressing-guyane.appspot.com",
-	messagingSenderId: "576072609810",
-	appId: "1:576072609810:web:11bdc425767b0d00"
-  };
-
-if (firebase.apps.length === 0) {
-	firebase.initializeApp(firebaseConfig);
-}
 
 const AuthStack = createStackNavigator();
 
@@ -77,7 +62,7 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Feed"
-        component={Feed}
+        component={Home}
         options={{
           tabBarLabel: 'Découvrir',
           tabBarIcon: ({ color, size }) => (

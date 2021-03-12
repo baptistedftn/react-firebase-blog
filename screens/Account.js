@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import * as firebase from 'firebase';
-import { Button } from 'react-native-paper';
+import firebase from '../provider/Firebase'
+import { Button, TextInput } from 'react-native-paper';
 import { Image } from 'react-native';
 import { Title } from 'react-native-paper';
 
@@ -10,11 +10,18 @@ import Text from '../components/utils/UbuntuFont';
 import Colors from '../constants/colors';
 
 export default function ({ navigation }) {
+	const [value, onChangeText] = React.useState('Useless Placeholder');
 	return (
 		<Layout navigation={navigation} title="Mon Compte">
 			<View style={styles.container}>
 				<Text>{"\n"}</Text>
 				<Title>Bonjour {firebase.auth().currentUser.displayName || firebase.auth().currentUser.email}</Title>
+				<Text>{"\n"}</Text>
+				<TextInput
+					style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+					onChangeText={text => onChangeText(text)}
+					value={value}
+				/>
 				<Text>{"\n"}</Text>
 				<Button color={Colors.black} icon="logout" mode="outlined" onPress={() => firebase.auth().signOut()}>
 					Déconnexion
