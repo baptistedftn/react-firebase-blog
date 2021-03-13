@@ -62,7 +62,7 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Feed"
-        component={Home}
+        component={Feed}
         options={{
           tabBarLabel: 'Découvrir',
           tabBarIcon: ({ color, size }) => (
