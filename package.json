@@ -23,7 +23,7 @@
   "homepage": "https://github.com/baptistedftn/react-firebase-blog#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "firebase": "^7.24.0",
+    "firebase": "^9.20.0",
     "markdown-react-js": "^1.0.2",
     "react": "^16.14.0"
   }
